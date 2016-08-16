@@ -75,3 +75,4 @@ Endpoints:
       - Frontend:      "/health"
         Backend:       ""
         Options:       { health: true }
+Source-Url: https://github.com/mrdziuban/openshift-cartridge-scala/archive/update-setup.zip
