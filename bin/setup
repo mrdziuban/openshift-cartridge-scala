@@ -7,12 +7,13 @@ SBT_VERSION=0.13.12
 cd ${OPENSHIFT_DATA_DIR}
 
 echo "Download scala $VERSION"
-curl -s -o ${OPENSHIFT_DATA_DIR}/scala-$VERSION.tgz http://downloads.lightbend.com/scala/$VERSION/scala-$VERSION.tgz
+curl -Ls -o ${OPENSHIFT_DATA_DIR}/scala-$VERSION.tgz http://downloads.lightbend.com/scala/$VERSION/scala-$VERSION.tgz
 tar xzf scala-$VERSION.tgz
 rm -f scala-$VERSION.tgz
 ln -s ${OPENSHIFT_DATA_DIR}/scala-$VERSION scala
 
 echo "Download sbt $SBT_VERSION"
-curl -s -o  ${OPENSHIFT_DATA_DIR}/sbt.tgz https://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz
-tar xzf sbt.tgz
-rm -f xzf sbt.tgz
+curl -Ls -o  ${OPENSHIFT_DATA_DIR}/sbt-$SBT_VERSION.tgz https://dl.bintray.com/sbt/native-packages/sbt/$SBT_VERSION/sbt-$SBT_VERSION.tgz
+tar xzf sbt-$SBT_VERSION.tgz
+rm -f sbt-$SBT_VERSION.tgz
+ln -s ${OPENSHIFT_DATA_DIR}/sbt-$SBT_VERSION sbt
