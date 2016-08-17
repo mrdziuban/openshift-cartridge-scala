@@ -26,7 +26,11 @@ function build {
     unset GIT_WORK_TREE
 
     cd $OPENSHIFT_REPO_DIR
-    sbt compile
+    if sbt help stage > /dev/null 2>&1; then
+      sbt compile stage
+    else
+      sbt compile
+    fi
 }
 
 function tidy {
